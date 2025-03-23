@@ -1,0 +1,6 @@
+[submodule "modules/dr_libs"]
+	path = modules/dr_libs
+	url = https://github.com/mackron/dr_libs
+[submodule "modules/portaudio"]
+	path = modules/portaudio
+	url = https://github.com/PortAudio/portaudio
