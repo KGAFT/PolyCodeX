@@ -2,7 +2,6 @@
 extern "C"{
 #include "decodex.h"
 }
-#include "dr_flac.h"
 #include <portaudio.h>
 #include <vector>
 #include <iostream>
@@ -57,7 +56,7 @@ private:
 
         float* out = static_cast<float*>(output);
         size_t samplesToRead = frameCount * player->channels;
-        drflac_uint64 samplesRead = readFileToPcmBuffer(player->flac, FLOAT_32, out,
+        uint64_t samplesRead = readFileToPcmBuffer(player->flac, FLOAT_32, out,
                                                         frameCount*sizeof(float)*player->channels)/(sizeof(float)*player->channels);
 
         if (samplesRead < frameCount) {
