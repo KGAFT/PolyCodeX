@@ -4,6 +4,4 @@
 [submodule "modules/portaudio"]
 	path = modules/portaudio
 	url = https://github.com/PortAudio/portaudio
-[submodule "modules/alac_cmake/alac"]
-	path = modules/alac_cmake/alac
-	url = https://github.com/macosforge/alac
+

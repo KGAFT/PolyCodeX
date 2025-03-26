@@ -8,6 +8,7 @@ extern "C"{
 #include <thread>
 #include <chrono>
 #include <fstream>
+#include <alac_decoder.hpp>
 
 class PortAudioPlayer {
 public:
@@ -82,6 +83,14 @@ void playFlacFile(const char* filename) {
 }
 
 int main() {
-    playFlacFile("grave.wav");
+    AlacDecoder decoder;
+    std::string path = "/mnt/files/sheep.caf";
+    decoder.openFile(path.c_str());
+    std::cout<<decoder.getChannelsAmount()<<" "<<decoder.getBitDepth()<<" "<<decoder.getSampleRate()<<std::endl;
+
+    //playFlacFile("grave.wav");
+
     return 0;
 }
+
+

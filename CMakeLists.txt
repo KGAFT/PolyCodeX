@@ -15,11 +15,11 @@ add_library(PolyCodeX-static STATIC ${SRC_FILES} ${PRV_FILES})
 target_include_directories(PolyCodeX-shared PUBLIC src/)
 target_include_directories(PolyCodeX-static PUBLIC src/)
 
-target_include_directories(PolyCodeX-shared PRIVATE private/ modules/dr_libs)
-target_include_directories(PolyCodeX-static PRIVATE private/ modules/dr_libs)
+target_include_directories(PolyCodeX-shared PUBLIC private/ modules/dr_libs)
+target_include_directories(PolyCodeX-static PUBLIC private/ modules/dr_libs)
 
-target_link_libraries(PolyCodeX-shared PRIVATE alac-shared)
-target_link_libraries(PolyCodeX-static PRIVATE alac-static)
+target_link_libraries(PolyCodeX-shared PUBLIC alac-shared)
+target_link_libraries(PolyCodeX-static PUBLIC alac-static)
 
 add_subdirectory(modules/portaudio)
 add_subdirectory(modules/alac_cmake)
