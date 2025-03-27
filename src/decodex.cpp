@@ -11,6 +11,7 @@ extern "C"{
 #include "flac_decoder.hpp"
 #include <cstdint>
 
+#include <alac_decoder.hpp>
 #include <cstdlib>
 #include <cstring>
 
@@ -65,6 +66,11 @@ PCFile* openFileDirect(const char* path, PCFileType fileType){
         result->handle = new WavDecoder;
         result->handleSize = sizeof(WavDecoder);
         ((WavDecoder*)result->handle)->openFile(path);
+        return result;
+    case ALAC_AUDIO:
+        result->handle = new AlacDecoder;
+        result->handleSize = sizeof(AlacDecoder);
+        ((AlacDecoder*)result->handle)->openFile(path);
         return result;
     default:
         break;

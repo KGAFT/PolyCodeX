@@ -5,6 +5,3 @@
 	path = modules/portaudio
 	url = https://github.com/PortAudio/portaudio
 
-[submodule "modules/Bento4"]
-	path = modules/Bento4
-	url = https://github.com/axiomatic-systems/Bento4

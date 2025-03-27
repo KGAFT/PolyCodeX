@@ -83,12 +83,12 @@ void playFlacFile(const char* filename) {
 }
 
 int main() {
-   // AlacDecoder decoder;
+    AlacDecoder decoder;
     std::string path = "/mnt/files/sheep.m4a";
-    //decoder.openFile(path.c_str());
-    //std::cout<<decoder.getChannelsAmount()<<" "<<decoder.getBitDepth()<<" "<<decoder.getSampleRate()<<std::endl;
+    decoder.openFile(path.c_str());
+    std::cout<<decoder.getChannelsAmount()<<" "<<decoder.getBitDepth()<<" "<<decoder.getSampleRate()<<std::endl;
 
-    playFlacFile("/mnt/files/sheep.m4a");
+    //playFlacFile("grave.wav");
 
     return 0;
 }

@@ -2,19 +2,23 @@
 #define ALAC_DECODER_HPP
 
 #include "IDecoder.hpp"
-#include <ALACDecoder.h>
 #include <cstdio>
-
+#include "Ap4.h"
 
 class AlacDecoder : public IDecoder
 {
 public:
     AlacDecoder();
 private:
-    FILE* file = nullptr;
-    ALACDecoder decoder;
-    void* magicCookie = nullptr;
-    uint32_t cookieSize = 0;
+    AP4_File* mp4File;
+    AP4_Movie* movie;
+    AP4_Track* track;
+    AP4_SampleDescription* sampleDescription;
+    AP4_AudioSampleDescription* audioDesc;
+    AP4_SampleTable* sampleTable;
+    AP4_ByteStream* fileStream;
+    AP4_Sample sample;
+    AP4_UI32 sampleIndex = 0;
 public:
     void openFile(const char* filePath) override;
     short getChannelsAmount() override;
